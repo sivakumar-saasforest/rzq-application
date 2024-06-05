@@ -1,8 +1,8 @@
 <?php
 
-namespace RZQApplication\Plugin;
+namespace RzqApplication\Plugin;
 
-class Welcome
+class Greetr
 {
     public function greet(String $sName)
     {
