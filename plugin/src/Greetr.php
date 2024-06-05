@@ -1,6 +1,6 @@
 <?php
 
-namespace Simplexi\Greetr;
+namespace RZQApplication\Plugin;
 
 class Greetr
 {

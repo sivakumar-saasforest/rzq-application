@@ -13,8 +13,10 @@
   "autoload": {
     "psr-4": {
       "App\\": "app/",
-      "rzq-application\\Plugin\\": "src/"
+      "RZQApplication\\Plugin\\": "src/"
     }
   },
-  "require": {}
+  "require": {
+
+  }
 }
