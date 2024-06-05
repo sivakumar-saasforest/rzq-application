@@ -16,7 +16,5 @@
       "RzqApplication\\Plugin\\": "src/"
     }
   },
-  "require": {
-
-  }
+  "require": {}
 }
