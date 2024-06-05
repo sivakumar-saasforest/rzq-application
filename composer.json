@@ -1,20 +1,20 @@
 {
-    "name": "rzq-application/plugin",
-    "description": "create RZQ plugin",
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sivakumar",
-            "email": "sivakumar@saasforest.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/",
-            "RZQApplication\\Plugin\\": "src/"
-        }
-    },
-    "require": {}
+  "name": "rzq/plugin",
+  "description": "create RZQ plugin",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sivakumar",
+      "email": "sivakumar@saasforest.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "RZQ\\Plugin\\": "src/"
+    }
+  },
+  "require": {}
 }
