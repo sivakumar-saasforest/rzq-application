@@ -4,7 +4,7 @@ namespace RzqApplication\Plugin\Store;
 
 use Exception;
 
-class Product
+class Coupon
 {
     public function all()
     {
@@ -12,7 +12,7 @@ class Product
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => rzq_api_site_url() . '/product.rzq',
+                CURLOPT_URL => rzq_api_site_url() . '/coupon.rzq',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -41,7 +41,7 @@ class Product
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => rzq_api_site_url() . '/' . $type . '-product.rzq',
+                CURLOPT_URL => rzq_api_site_url() . '/' . $type . '-coupon.rzq',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -67,13 +67,13 @@ class Product
         }
     }
 
-    public function show($productId)
+    public function show($couponId)
     {
         try {
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => rzq_api_site_url() . '/product/' . $productId . '.rzq',
+                CURLOPT_URL => rzq_api_site_url() . '/coupon/' . $couponId . '.rzq',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
