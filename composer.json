@@ -21,7 +21,7 @@
       "Tests\\": "tests/"
     },
     "files": [
-      "src/Helpers/Helper.php"
+      "rzq_application/Plugin/Helpers/Helper.php"
     ]
   },
   "require": {
