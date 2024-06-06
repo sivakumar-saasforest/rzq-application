@@ -4,15 +4,15 @@ namespace RzqApplication\Plugin\Store;
 
 use Exception;
 
-class Welcome
+class Store
 {
-    public function store($storeId)
+    public function store()
     {
         try {
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => RZQ_API_URL . '/store-' . $storeId,
+                CURLOPT_URL => rzq_api_site_url() . '.rzq',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,

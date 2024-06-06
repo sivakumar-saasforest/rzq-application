@@ -16,6 +16,14 @@
       "RzqApplication\\Plugin\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    },
+    "files": [
+      "src/Helpers/Helper.php"
+    ]
+  },
   "require": {
     "filament/filament": "^3.2"
   }
