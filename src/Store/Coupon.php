@@ -41,7 +41,7 @@ class Coupon
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => rzq_api_site_url() . '/' . $type . '-coupon.rzq',
+                CURLOPT_URL => rzq_api_site_url() . '/coupon.rzq',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
