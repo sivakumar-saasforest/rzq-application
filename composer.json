@@ -16,5 +16,7 @@
       "RzqApplication\\Plugin\\": "src/"
     }
   },
-  "require": {}
+  "require": {
+    "filament/filament": "^3.2"
+  }
 }
