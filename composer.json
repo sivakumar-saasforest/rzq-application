@@ -27,6 +27,13 @@
       "src/Helpers/Helper.php"
     ]
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RzqApplication\\Plugin\\RZQPluginServiceProvider"
+      ]
+    }
+  },
   "require": {
     "filament/filament": "^3.2"
   }
