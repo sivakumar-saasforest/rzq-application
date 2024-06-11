@@ -6,7 +6,7 @@ use Exception;
 
 class Store
 {
-    public function store()
+    public static function store()
     {
         try {
             $curl = curl_init();

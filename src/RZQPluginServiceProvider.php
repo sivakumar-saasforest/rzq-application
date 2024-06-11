@@ -1,8 +1,9 @@
 <?php
 
 namespace RzqApplication\Plugin;
-
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use RzqApplication\Plugin\Http\Middleware\RZQAuthMiddleware;
 
 class RZQPluginServiceProvider extends ServiceProvider
 {
@@ -15,34 +16,31 @@ class RZQPluginServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        // $this->app->bind('task', function () {
-        //     return new Task();
-        // });
-        // if ($this->app->runningInConsole()) {
-
-        //     $this->publishes([
-        //         __DIR__ . '/../config/config.php' => config_path('rzqpackage.php'),
-        //     ], 'config');
-
-        //     // Export the migration
-        //     if (!class_exists('CreatePlansTable')) {
-        //         $this->publishes([
-        //             __DIR__ . '/../database/migrations/create_plans_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_plans_table.php'),
-        //         ], 'migrations');
-        //     }
-
-        //     if (!class_exists('CreateShopsTable')) {
-        //         $this->publishes([
-        //             __DIR__ . '/../database/migrations/create_shops_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_shops_table.php'),
-        //         ], 'migrations');
-        //     }
-
-        //     if (!class_exists('CreateChargesTable')) {
-        //         $this->publishes([
-        //             __DIR__ . '/../database/migrations/create_charges_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_charges_table.php'),
-        //         ], 'migrations');
-        //     }
-        // }
+        $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('rzq-auth', RZQAuthMiddleware::class);
+      
     }
+
+    // public function boot()
+    // {
+    //     // ... other things
+    //     $this->registerRoutes();
+    // }
+
+    // protected function registerRoutes()
+    // {
+    //     Route::group($this->routeConfiguration(), function () {
+    //         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+    //     });
+    // }
+
+    // protected function routeConfiguration()
+    // {
+    //     return [
+    //         'prefix' => config('blogpackage.prefix'),
+    //         'middleware' => config('blogpackage.middleware'),
+    //     ];
+    // }
 }
