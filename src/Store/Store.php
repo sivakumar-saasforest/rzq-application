@@ -6,13 +6,13 @@ use Exception;
 
 class Store
 {
-    public static function store()
+    public static function store($storeId = null)
     {
         try {
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => rzq_api_site_url() . '.rzq',
+                CURLOPT_URL => rzq_api_site_url($storeId) . '.rzq',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
