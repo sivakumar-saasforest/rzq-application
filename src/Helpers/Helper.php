@@ -7,5 +7,5 @@ function rzq_api_site_url($storeId = null)
 
 function my_store_id()
 {
-    return auth()->user()->id;
+    return auth()->user()->shop_id;
 }
