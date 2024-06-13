@@ -35,7 +35,7 @@ class ProductCategory
         }
     }
 
-    public function create($data, $type)
+    public function create($data)
     {
         try {
             $curl = curl_init();
