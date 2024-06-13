@@ -21,7 +21,7 @@ class RZQPluginServiceProvider extends ServiceProvider
 
         $router = $this->app->make(Router::class);
         $kernel->appendMiddlewareToGroup('web', RZQAuthMiddleware::class);
-        $kernel->pushMiddlewareToGroup('web', IframeProtection::class);
+        $kernel->appendMiddlewareToGroup('web', IframeProtection::class);
         $router->aliasMiddleware('rzq-auth', RZQAuthMiddleware::class);
     }
 }
