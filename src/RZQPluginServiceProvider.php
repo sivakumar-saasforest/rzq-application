@@ -4,6 +4,7 @@ namespace RzqApplication\Plugin;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
+use RzqApplication\Plugin\Http\Middleware\IframeProtection;
 use RzqApplication\Plugin\Http\Middleware\RZQAuthMiddleware;
 
 class RZQPluginServiceProvider extends ServiceProvider
@@ -20,7 +21,7 @@ class RZQPluginServiceProvider extends ServiceProvider
 
         $router = $this->app->make(Router::class);
         $kernel->appendMiddlewareToGroup('web', RZQAuthMiddleware::class);
+        $kernel->pushMiddlewareToGroup('web', IframeProtection::class);
         $router->aliasMiddleware('rzq-auth', RZQAuthMiddleware::class);
-      
     }
 }
